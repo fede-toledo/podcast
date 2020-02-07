@@ -1,0 +1,740 @@
+/** GLOBAL STYLES **/
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+body {
+  font-family: 'IBM Plex Mono', monospace, serif;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0;
+  position: relative;
+}
+section {
+  padding: 5em 0 0; 
+}
+.big-container {
+  width: 90%;
+  margin: 0 auto;
+}
+img {
+  max-width: 100%;
+}
+h1, h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #060A24;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+h1 {
+  margin-bottom: 16px;
+  font-size: 64px;
+  line-height: 64px;
+}
+h2 {
+  margin-bottom: 8px;
+  font-size: 36px;
+  line-height: 40px;
+}
+.btn-primary {
+  background: #00F3BB;
+  width: 100%;
+  padding: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #060A24;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #0000fe;
+  background-image: linear-gradient(270deg, #0000fe 25%, #00f0b8 100%);
+  color: white;
+}
+.gradient {
+  background-color: #0000ff;
+  background-image: linear-gradient(180deg, #0000ff 25%, #0000a3 100%);
+}
+html {
+scroll-behavior: smooth;
+}
+
+/* SCROLL BACK BTN **/
+
+.scroll-back-btn {
+  position: fixed;
+  right: 17px;
+  bottom: 35px;
+  background: #00000038;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+}
+.scroll-back-btn a{
+  line-height: 25px;
+  position: relative;
+  vertical-align: middle;
+}
+.scroll-back-btn a i{
+  font-size: 30px;
+  line-height: 30px;
+  padding: 5px;
+  color: white;
+}
+
+
+/** HEADER **/
+
+.header ul {
+  margin: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.header li a {
+  text-transform: uppercase;
+  color: white;
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #0127da;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 18px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+  background: blue;
+  padding: 20px 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+
+
+/** HERO SLIDE **/
+
+#hero-slide {
+  padding-top: 3em!important;
+  padding-bottom: 6em!important;
+}
+#hero-slide h1 .line-through{
+  text-decoration: line-through;
+}
+#hero-slide h1 .blue-dot {
+  color: #0000EC;
+}
+#hero-slide p{
+  margin-bottom: 36px;
+}
+
+
+
+
+/** EPISODIOS **/
+
+#episodios {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 7em;
+
+}
+#episodios .angle-shape::before {
+  content: "";
+  display: block;
+  background: #0000FF;
+  width: 100%;
+  height: 65px;
+  position: absolute;
+  top: -64px;
+  z-index: 0;
+  -webkit-clip-path: polygon(100% 100%, 0 100%, 100% 0);
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+#episodios .angle-shape::after {
+  content: "";
+  display: block;
+  background: #0000A3;
+  width: 100%;
+  height: 65px;
+  position: absolute;
+  bottom: -65px;
+  z-index: 0;
+  -webkit-clip-path: polygon(100% 0, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 0 100%, 0 0);
+}
+
+#episodios-content {
+  position: relative;
+  z-index: 3;
+  padding-top: 20px;
+}
+
+#episodios-content h2{
+  color: white;
+  margin-bottom: 21px;
+}
+
+#episodios iframe{
+  margin-bottom: 11px;
+  box-sizing: content-box!important;
+  border: none!important;
+  width: 100%!important;
+}
+
+#episodios iframe:nth-last-child(1){
+  margin-bottom: 0;
+}
+
+
+
+/** NOSOTROS **/
+
+#nosotros {
+  padding: 0;
+  position: relative;
+  top: -50px;
+}
+
+
+
+/** ENTREVISTAS **/
+
+#entrevistas {
+  padding-top: 2em;
+}
+
+#entrevistas {
+  display: block;
+}
+
+#entrevistas img:nth-last-child(1n+2) {
+  float: left;
+}
+
+
+
+/** TÓPICOS**/
+
+#topicos {
+  padding: 5em 0 2em;
+}
+
+#topicos h2{
+  margin-bottom: 35px;
+}
+
+#topicos .icon-text {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+#topicos .icon-text  img{
+  margin-bottom: 13px;
+}
+#topicos .icon-text  p{
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: #060A24;
+  text-align: center;
+  font-weight: 600;
+}
+
+
+
+/** NOVEDADES **/
+
+#novedades {
+  padding: 3em 0 5em;
+  text-align: center;
+  position: relative;
+}
+
+#novedades h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 36px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 42px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+#novedades .angle-shape::before {
+  content: "";
+  display: block;
+  background: #0000FF;
+  width: 100%;
+  height: 65px;
+  position: absolute;
+  top: -64px;
+  z-index: 0;
+  -webkit-clip-path: polygon(100% 100%, 0 100%, 100% 0);
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+
+/** FOOTER **/
+
+#footer {
+  text-align: center;
+  padding: 2em 0;
+}
+
+#footer .social-container {
+  margin-top: 20px;
+}
+
+#footer a i{
+  font-size: 20px;
+  line-height: 22px;
+  margin-right: 25px;
+  color: black;
+}
+
+#footer a:nth-last-child(1) i {
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+/* DESKTOP VERSION */
+
+
+
+@media screen and (min-width: 768px) {
+
+.medium-container {
+  width: 70%!important;
+}
+
+.flex {
+  display: flex;
+}
+
+
+/** HEADER - 768px **/
+
+.header {
+    height: 60px;
+    background: white;
+    position: fixed;
+    z-index: 8;
+    width: 100%;
+}
+
+/** HERO SLIDE - 768px  **/
+
+#hero-slide {
+  padding: 10em 0!important;
+  text-align: left;
+}
+
+#hero-slide a{
+  width: 25%;
+  margin: 0;
+}
+
+#hero-slide p{
+  margin-bottom: 56px;
+}
+
+
+/* EPISODIOS - 768px  */
+
+#episodios {
+  padding-bottom: 7em;
+}
+
+#episodios .angle-shape::before {
+  height: 130px;
+  top: -130px;
+  position: absolute;
+  z-index: 0;
+}
+
+#episodios .angle-shape::after {
+  height: 200px;
+  bottom: -200px;
+  position: absolute;
+  z-index: 0;
+}
+
+#episodios .desk-view {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 46% 46%;
+  grid-gap: 8%;
+}
+
+
+/* NOSOTROS - 768px  */
+
+#nosotros {
+  padding: 0 0 5em;
+  position: static;
+}
+
+#nosotros .block {
+  display: block;
+}
+
+#nosotros .phone-container {
+  width: 65%;
+  position: relative;
+  z-index: 4;
+}
+
+#nosotros .nosotros-info {
+  margin-top: 40px;
+  width: 100%
+}
+
+#nosotros .nosotros-info p:nth-last-child(2){
+  padding-top: 15px;
+}
+
+#nosotros .nosotros-info p:nth-last-child(1){
+  padding-top: 15px;
+}
+
+
+
+/* ENTREVISTAS - 768px  */
+
+#entrevistas h2 {
+  margin-bottom: 36px;
+}
+
+#entrevistas .invitados-photos {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+
+/* TÓPICOS - 768px  */
+
+#topicos .grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+}
+
+
+
+/* NOVEDADES - 768px  */
+
+#novedades a{
+  width: 60%;
+}
+
+
+
+/* FOOTER - 768px  **/
+
+#footer .flex {
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer .social-container {
+  margin: 0;
+}
+
+#footer p{
+  margin: 0;
+}
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+
+.medium-container {
+  width: 70%!important;
+}
+
+.flex {
+  display: flex;
+}
+
+
+/* HEADER - 1000px  */
+
+
+.header li {
+  float: left;
+}
+
+.header li:hover a{
+  background: none;
+}
+
+.header li a {
+  padding: 20px 30px;
+  color: black;
+}
+
+.header li a:hover {
+  text-decoration: line-through; 
+  color: #00F3BB ;
+}
+
+.header li a:active {
+  color: #8F060A24;
+}
+
+.header .menu {
+  clear: none;
+  float: right;
+  max-height: none;
+}
+
+.header .menu-icon {
+  display: none;
+}
+
+.header .logo {
+  padding-left: 70px;
+}
+
+.header ul {
+  margin-right: 40px;
+}
+
+
+
+/** HERO SLIDE - 1000px */
+
+#hero-slide a{
+  width: 25%;
+  margin: 0;
+}
+
+#hero-slide p{
+  margin-bottom: 56px;
+}
+
+
+
+/* EPISODIOS - 1000px */
+
+#episodios {
+  padding-top: 3em;
+  padding-bottom: 7em;
+}
+
+#episodios .angle-shape::before {
+  height: 130px;
+  top: -130px;
+  position: absolute;
+  z-index: 0;
+}
+
+#episodios .angle-shape::after {
+  height: 200px;
+  bottom: -200px;
+  position: absolute;
+  z-index: 0;
+}
+
+#episodios .desk-view {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 46% 46%;
+  grid-gap: 8%;
+}
+
+
+
+/* NOSOTROS - 1000px */
+
+#nosotros {
+  padding: 0 0 5em;
+  position: static;
+}
+
+#nosotros .phone-container {
+  width: 40%;
+  position: relative;
+  z-index: 4;
+}
+
+#nosotros .nosotros-info {
+  margin-top: 200px;
+  width: 50%
+}
+
+#nosotros .nosotros-info p:nth-last-child(2){
+  padding-top: 15px;
+}
+
+#nosotros .nosotros-info p:nth-last-child(1){
+  padding-top: 15px;
+}
+
+
+
+/* ENTREVISTAS - 1000px */
+
+#entrevistas {
+  padding-top: 4em;
+}
+
+#entrevistas h2 {
+  margin-bottom: 36px;
+}
+
+#entrevistas .invitados-photos {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+}
+  
+
+/* TÓPICOS - 1000px */
+
+.flex {
+  display: flex!important;
+}
+#topicos {
+  padding: 5em 0 7em;
+}
+#topicos h2{
+  margin-bottom: 70px;
+}
+#topicos .icon-text {
+  width: 20%;
+}
+#topicos .icon-text img{
+  margin-bottom: 30px;
+}
+
+
+/* NOVEDADES - 1000px */
+
+#novedades {
+  padding-bottom: 8em;
+}
+#novedades .angle-shape:before {
+  height: 125px;
+  top: -124px;
+}
+#novedades a {
+  width: 35%;
+}
+
+
+/* FOOTER - 1000px */
+
+#footer .flex {
+  justify-content: space-between;
+  align-items: center;
+}
+#footer .social-container {
+  margin: 0;
+}
+#footer p{
+  margin: 0;
+}
+
+
+}
+
